@@ -40,5 +40,11 @@ namespace TrabajoCompu
             FrmOrdenarPorShell frm = new FrmOrdenarPorShell();
             frm.ShowDialog();
         }
+
+        private void generarDeudasBancariasManualmenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGenerarDeudasManualmente frm = new FrmGenerarDeudasManualmente();
+            frm.ShowDialog();
+        }
     }
 }

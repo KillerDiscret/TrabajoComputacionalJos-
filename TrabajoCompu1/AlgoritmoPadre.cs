@@ -18,11 +18,21 @@ namespace TrabajoCompu
                 Deudores = new List<Deudor>();
             }
         }
+        public void AgregarDatosManualmente(Deudor aux)
+        {
+            if (ExisteDNI(aux.DNI) == false )
+            {
+                Deudores.Add(aux);
+            }
+        }
         public void GenerarDatos()
         {
-          
-            Deudores = new List<Deudor>();
-            for(int i=0; i<1000;i++)
+            //si volvemos a inicializar a los deudores lo que se almacena primero como manual
+            //se perdera luego que pongamos agregar aleatoriamente
+            //inicializarlo solo serviria cuando queremos generar otra lista aleatoria
+            //para eliminar los anteriores y crear otros nuevos elementos
+            //Deudores = new List<Deudor>();
+            for (int i = 0; i < 1000; i++)
             {
                 loop:
                 Random r1 = new Random();
@@ -30,15 +40,15 @@ namespace TrabajoCompu
                 Deudor aux = new Deudor();
                 aux.DEUDA = r1.Next(1000, 50001);
                 aux.DNI = r2.Next(70000000, 80000001);
-                if(ExisteDNI(aux.DNI)==false&&ExisteDeuda(aux.DEUDA)==false)
+                if (ExisteDNI(aux.DNI) == false && ExisteDeuda(aux.DEUDA) == false)
                 {
-                    Deudores.Insert(i, aux);
+                    Deudores.Add(aux);
                 }
                 else
                 {
                     goto loop;
                 }
-                
+
             }
         }
         public bool ExisteDeuda(int DEUDA)
@@ -57,13 +67,13 @@ namespace TrabajoCompu
             {
                 listaDeudas.Add(x.DEUDA);
             }
-            int[] arrDeudas = new int[1000];
-            for (int i = 0; i < 1000; i++)
+            int[] arrDeudas = new int[Deudores.Count];
+            for (int i = 0; i < Deudores.Count; i++)
             {
                 arrDeudas[i] = listaDeudas[i];
             }
             int k, aux;
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < Deudores.Count; i++)
             {
                 k = i - 1;
                 aux = arrDeudas[i];
@@ -83,12 +93,12 @@ namespace TrabajoCompu
             {
                 listaDeudas.Add(x.DEUDA);
             }
-            int[] arrDeudas = new int[1000];
-            for (int j = 0; j < 1000; j++)
+            int[] arrDeudas = new int[Deudores.Count];
+            for (int j = 0; j < Deudores.Count; j++)
             {
                 arrDeudas[j] = listaDeudas[j];
             }
-            int medio = 1000, i, aux;
+            int medio = Deudores.Count, i, aux;
             bool band;
             while (medio > 1)
             {
@@ -98,7 +108,7 @@ namespace TrabajoCompu
                 {
                     band = false;
                     i = 0;
-                    while ((i + medio) < 1000)
+                    while ((i + medio) < Deudores.Count)
                     {
                         if (arrDeudas[i] > arrDeudas[i + medio])
                         {

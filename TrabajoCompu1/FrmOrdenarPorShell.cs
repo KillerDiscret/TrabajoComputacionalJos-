@@ -50,7 +50,7 @@ namespace TrabajoCompu
                       }
                   }
                   */
-                for (int i = 0; i < 1000; i++)
+                for (int i = 0; i < AlgoritmoPadre.Deudores.Count; i++)
                 {
                     Deudor objaux = new Deudor();
                     objaux.DEUDA = auxdeudas[i];

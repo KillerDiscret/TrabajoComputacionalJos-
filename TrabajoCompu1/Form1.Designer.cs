@@ -30,12 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.crearciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenamientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarDeudasBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenamientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenarDeudasPorInserciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenarDeudasPorShellSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.promedioDeudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.generarDeudasBancariasManualmenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,10 +54,18 @@
             // crearciónToolStripMenuItem
             // 
             this.crearciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generarDeudasBancariasToolStripMenuItem});
+            this.generarDeudasBancariasToolStripMenuItem,
+            this.generarDeudasBancariasManualmenteToolStripMenuItem});
             this.crearciónToolStripMenuItem.Name = "crearciónToolStripMenuItem";
             this.crearciónToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.crearciónToolStripMenuItem.Text = "Creación";
+            // 
+            // generarDeudasBancariasToolStripMenuItem
+            // 
+            this.generarDeudasBancariasToolStripMenuItem.Name = "generarDeudasBancariasToolStripMenuItem";
+            this.generarDeudasBancariasToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.generarDeudasBancariasToolStripMenuItem.Text = "Generar Deudas Bancarias Aleatorias";
+            this.generarDeudasBancariasToolStripMenuItem.Click += new System.EventHandler(this.generarDeudasBancariasToolStripMenuItem_Click);
             // 
             // ordenamientosToolStripMenuItem
             // 
@@ -67,13 +76,6 @@
             this.ordenamientosToolStripMenuItem.Name = "ordenamientosToolStripMenuItem";
             this.ordenamientosToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.ordenamientosToolStripMenuItem.Text = "Ordenamientos";
-            // 
-            // generarDeudasBancariasToolStripMenuItem
-            // 
-            this.generarDeudasBancariasToolStripMenuItem.Name = "generarDeudasBancariasToolStripMenuItem";
-            this.generarDeudasBancariasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.generarDeudasBancariasToolStripMenuItem.Text = "Generar Deudas Bancarias";
-            this.generarDeudasBancariasToolStripMenuItem.Click += new System.EventHandler(this.generarDeudasBancariasToolStripMenuItem_Click);
             // 
             // ordenarDeudasPorInserciónToolStripMenuItem
             // 
@@ -89,6 +91,12 @@
             this.ordenarDeudasPorShellSortToolStripMenuItem.Text = "Ordenar Deudas por Shellsort";
             this.ordenarDeudasPorShellSortToolStripMenuItem.Click += new System.EventHandler(this.ordenarDeudasPorShellSortToolStripMenuItem_Click);
             // 
+            // promedioDeudasToolStripMenuItem
+            // 
+            this.promedioDeudasToolStripMenuItem.Name = "promedioDeudasToolStripMenuItem";
+            this.promedioDeudasToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.promedioDeudasToolStripMenuItem.Text = "Promedio Deudas";
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(203, 337);
@@ -99,11 +107,12 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // promedioDeudasToolStripMenuItem
+            // generarDeudasBancariasManualmenteToolStripMenuItem
             // 
-            this.promedioDeudasToolStripMenuItem.Name = "promedioDeudasToolStripMenuItem";
-            this.promedioDeudasToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.promedioDeudasToolStripMenuItem.Text = "Promedio Deudas";
+            this.generarDeudasBancariasManualmenteToolStripMenuItem.Name = "generarDeudasBancariasManualmenteToolStripMenuItem";
+            this.generarDeudasBancariasManualmenteToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.generarDeudasBancariasManualmenteToolStripMenuItem.Text = "Generar Deudas Bancarias Manualmente";
+            this.generarDeudasBancariasManualmenteToolStripMenuItem.Click += new System.EventHandler(this.generarDeudasBancariasManualmenteToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -132,6 +141,7 @@
         private System.Windows.Forms.ToolStripMenuItem ordenarDeudasPorShellSortToolStripMenuItem;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ToolStripMenuItem promedioDeudasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generarDeudasBancariasManualmenteToolStripMenuItem;
     }
 }
 
