@@ -27,31 +27,46 @@ namespace TrabajoCompu
         private void button1_Click(object sender, EventArgs e)
         {
             lbDeudas.Items.Clear();
-            int[] auxdeudas = obj.OrdenarPorShell();
-
-            for (int i = 0; i < 1000; i++)
+            List<Deudor> ListaAuxiliar = new List<Deudor>();
+            if (AlgoritmoPadre.Deudores.Count>0)
             {
-                lbDeudas.Items.Add(auxdeudas[i]);
+                int[] auxdeudas = obj.OrdenarPorShell();
 
-            }
+                /*  for (int i = 0; i < 1000; i++)
+                  {
+                      lbDeudas.Items.Add(auxdeudas[i]);
 
-            for (int i = 0; i < 1000; i++)
-            {
-                List<Deudor> listadeudores = AlgoritmoPadre.Deudores.FindAll(delegate (Deudor x) { return x.DEUDA == auxdeudas[i]; });
-                foreach (Deudor aux in listadeudores)
+                  }
+
+                  for (int i = 0; i < 1000; i++)
+                  {
+                      List<Deudor> listadeudores = AlgoritmoPadre.Deudores.FindAll(delegate (Deudor x) { return x.DEUDA == auxdeudas[i]; });
+                      foreach (Deudor aux in listadeudores)
+                      {
+                          if (lbDni.Items.Equals(aux.DNI) == false)
+                          {
+                              lbDni.Items.Add(aux.DNI);
+                          }
+                      }
+                  }
+                  */
+                for (int i = 0; i < 1000; i++)
                 {
-                    if (lbDni.Items.Equals(aux.DNI) == false)
-                    {
-                        lbDni.Items.Add(aux.DNI);
-                    }
+                    Deudor objaux = new Deudor();
+                    objaux.DEUDA = auxdeudas[i];
+                    objaux.DNI = AlgoritmoPadre.Deudores.Find(delegate (Deudor x) { return x.DEUDA == auxdeudas[i]; }).DNI;
+                    ListaAuxiliar.Add(objaux);
                 }
+                lbDeudas.DisplayMember = "DEUDA";
+                lbDeudas.DataSource = ListaAuxiliar;
+                lbDni.DisplayMember = "DNI";
+                lbDni.DataSource = ListaAuxiliar;
             }
-
-
-
-
-
-
+           else
+            {
+                MessageBox.Show("No se han generado datos");
+            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)

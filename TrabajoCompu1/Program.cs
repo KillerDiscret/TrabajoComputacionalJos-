@@ -16,6 +16,8 @@ namespace TrabajoCompu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //cambiar el Form1 por otro nombre de formulario para que el programa abra eso primero
+            //Application.Run(new FrmGenerarDeudas());
             Application.Run(new Form1());
         }
     }
